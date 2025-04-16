@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Form container styles */
+.form-container {
+  @apply max-w-md mx-auto p-6 bg-white rounded-lg shadow-lg;
+}
+
+.form-title {
+  @apply text-xl font-semibold text-center mb-6;
+}
+
+/* Input field styles */
+.input-field {
+  @apply mt-1 p-2 w-full border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500;
+}
+
+/* Error message styles */
+.error-message {
+  @apply mt-2 text-sm text-red-500;
+}
+
+/* Submit button styles */
+.submit-btn {
+  @apply w-full py-2 rounded-md font-semibold focus:outline-none focus:ring-2 focus:ring-opacity-50;
+}
+
+/* Disabled button styles */
+.disabled-btn {
+  @apply bg-gray-400 text-gray-700 cursor-not-allowed;
+}
+
+/* Enabled button styles */
+.enabled-btn {
+  @apply bg-blue-500 text-white hover:bg-blue-600;
+}
+
+/* Sign Up button styles */
+.signup-btn {
+  @apply w-full py-2 rounded-md font-semibold focus:outline-none focus:ring-2 focus:ring-opacity-50 bg-green-500 text-white hover:bg-green-600;
+}
+
+.signup-btn:disabled {
+  @apply bg-gray-400 text-gray-700 cursor-not-allowed;
+}

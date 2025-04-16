@@ -1,0 +1,36 @@
+<div class="form-container">
+    <h3 class="form-title">Login Here...</h3>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div class="mb-4">
+            <label for="username" class="block text-sm font-medium text-gray-700">Username</label>
+            <input type="email" id="username" formControlName="username" class="input-field" />
+            <div *ngIf="loginForm.get('username')?.invalid && loginForm.get('username')?.touched" class="error-message">
+                <div *ngIf="loginForm.get('username')?.errors?.['required']">Username is required.</div>
+                <div *ngIf="loginForm.get('username')?.errors?.['email']">Please enter a valid email address.</div>
+            </div>
+        </div>
+
+        <div class="mb-4">
+            <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+            <input type="password" id="password" formControlName="password" class="input-field" />
+            <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched" class="error-message">
+                <div *ngIf="loginForm.get('password')?.errors?.['required']">Password is required.</div>
+                <div *ngIf="loginForm.get('password')?.errors?.['minlength']">Password must be at least 6 characters.
+                </div>
+            </div>
+        </div>
+
+        <div class="flex space-x-4 mt-6">
+            <button type="submit" class="submit-btn" [ngClass]="{
+                        'enabled-btn': !loginForm.invalid,
+                        'disabled-btn': loginForm.invalid
+                    }" [disabled]="loginForm.invalid">
+                Login
+            </button>
+
+            <button type="button" class="submit-btn signup-btn" (click)="navigateToSignUp()">
+                Sign Up
+            </button>
+        </div>
+    </form>
+</div>
